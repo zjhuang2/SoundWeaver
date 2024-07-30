@@ -6,12 +6,27 @@
 //
 
 import SwiftUI
+import Combine
+import SoundAnalysis
+import FirebaseCore
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+  func application(_ application: UIApplication,
+                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    FirebaseApp.configure()
+    return true
+  }
+}
 
 @main
 struct SoundWeaverHUDApp: App {
     var body: some Scene {
-        WindowGroup {
+//        WindowGroup {
+//            ContentView()
+//        }.windowStyle(.volumetric)
+        
+        ImmersiveSpace(id: "ImmersiveSpace") {
             ContentView()
-        }.windowStyle(.volumetric)
+        }
     }
 }

@@ -12,6 +12,26 @@
 		E70549342C56D168007595A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70549332C56D168007595A4 /* ContentView.swift */; };
 		E70549362C56D16A007595A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E70549352C56D16A007595A4 /* Assets.xcassets */; };
 		E70549392C56D16A007595A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E70549382C56D16A007595A4 /* Preview Assets.xcassets */; };
+		E70549412C56D1F8007595A4 /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70549402C56D1F8007595A4 /* HUDView.swift */; };
+		E70549432C56D326007595A4 /* AwarenessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70549422C56D326007595A4 /* AwarenessView.swift */; };
+		E70549452C56D32D007595A4 /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70549442C56D32D007595A4 /* ActionView.swift */; };
+		E70549472C56D335007595A4 /* SocialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70549462C56D335007595A4 /* SocialView.swift */; };
+		E705494B2C56D379007595A4 /* ClassificationResultsObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E705494A2C56D379007595A4 /* ClassificationResultsObject.swift */; };
+		E705494D2C56D38B007595A4 /* SoundIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E705494C2C56D38B007595A4 /* SoundIdentifier.swift */; };
+		E705494F2C56D398007595A4 /* DetectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E705494E2C56D398007595A4 /* DetectionState.swift */; };
+		E70549512C56D3B8007595A4 /* AudioClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70549502C56D3B8007595A4 /* AudioClassifier.swift */; };
+		E70549532C56D3CD007595A4 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70549522C56D3CD007595A4 /* SpeechRecognizer.swift */; };
+		E70549552C56D3E2007595A4 /* AudioSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70549542C56D3E2007595A4 /* AudioSessionManager.swift */; };
+		E70549572C56D3F3007595A4 /* AudioClassificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70549562C56D3F3007595A4 /* AudioClassificationManager.swift */; };
+		E70549592C56D9AE007595A4 /* SoundClassificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70549582C56D9AE007595A4 /* SoundClassificationView.swift */; };
+		E705495B2C56D9DE007595A4 /* TranscriptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E705495A2C56D9DE007595A4 /* TranscriptView.swift */; };
+		E705495D2C57CDAF007595A4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E705495C2C57CDAF007595A4 /* GoogleService-Info.plist */; };
+		E79D9CEC2C57D2BE0098BE30 /* AwarenessDirectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D9CEB2C57D2BE0098BE30 /* AwarenessDirectionView.swift */; };
+		E7D6D4732C57D26C00A2D747 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E7D6D4722C57D26C00A2D747 /* FirebaseAnalytics */; };
+		E7D6D4752C57D26C00A2D747 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = E7D6D4742C57D26C00A2D747 /* FirebaseAnalyticsOnDeviceConversion */; };
+		E7D6D4772C57D26C00A2D747 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E7D6D4762C57D26C00A2D747 /* FirebaseAnalyticsSwift */; };
+		E7D6D4792C57D26C00A2D747 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E7D6D4782C57D26C00A2D747 /* FirebaseDatabase */; };
+		E7D6D47B2C57D26C00A2D747 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E7D6D47A2C57D26C00A2D747 /* FirebaseDatabaseSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +42,21 @@
 		E70549352C56D16A007595A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E70549382C56D16A007595A4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E705493A2C56D16A007595A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E70549402C56D1F8007595A4 /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
+		E70549422C56D326007595A4 /* AwarenessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwarenessView.swift; sourceTree = "<group>"; };
+		E70549442C56D32D007595A4 /* ActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionView.swift; sourceTree = "<group>"; };
+		E70549462C56D335007595A4 /* SocialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialView.swift; sourceTree = "<group>"; };
+		E705494A2C56D379007595A4 /* ClassificationResultsObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationResultsObject.swift; sourceTree = "<group>"; };
+		E705494C2C56D38B007595A4 /* SoundIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundIdentifier.swift; sourceTree = "<group>"; };
+		E705494E2C56D398007595A4 /* DetectionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionState.swift; sourceTree = "<group>"; };
+		E70549502C56D3B8007595A4 /* AudioClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioClassifier.swift; sourceTree = "<group>"; };
+		E70549522C56D3CD007595A4 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		E70549542C56D3E2007595A4 /* AudioSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSessionManager.swift; sourceTree = "<group>"; };
+		E70549562C56D3F3007595A4 /* AudioClassificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioClassificationManager.swift; sourceTree = "<group>"; };
+		E70549582C56D9AE007595A4 /* SoundClassificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundClassificationView.swift; sourceTree = "<group>"; };
+		E705495A2C56D9DE007595A4 /* TranscriptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptView.swift; sourceTree = "<group>"; };
+		E705495C2C57CDAF007595A4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E79D9CEB2C57D2BE0098BE30 /* AwarenessDirectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwarenessDirectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +64,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7D6D47B2C57D26C00A2D747 /* FirebaseDatabaseSwift in Frameworks */,
+				E7D6D4792C57D26C00A2D747 /* FirebaseDatabase in Frameworks */,
+				E7D6D4772C57D26C00A2D747 /* FirebaseAnalyticsSwift in Frameworks */,
+				E7D6D4732C57D26C00A2D747 /* FirebaseAnalytics in Frameworks */,
+				E7D6D4752C57D26C00A2D747 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				E70549302C56D168007595A4 /* RealityKitContent in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,11 +96,19 @@
 		E705492C2C56D168007595A4 /* SoundWeaverHUD */ = {
 			isa = PBXGroup;
 			children = (
+				E705495C2C57CDAF007595A4 /* GoogleService-Info.plist */,
+				E70549492C56D36C007595A4 /* Helper */,
 				E70549312C56D168007595A4 /* SoundWeaverHUDApp.swift */,
 				E70549332C56D168007595A4 /* ContentView.swift */,
+				E70549482C56D358007595A4 /* Views */,
 				E70549352C56D16A007595A4 /* Assets.xcassets */,
 				E705493A2C56D16A007595A4 /* Info.plist */,
 				E70549372C56D16A007595A4 /* Preview Content */,
+				E70549402C56D1F8007595A4 /* HUDView.swift */,
+				E70549502C56D3B8007595A4 /* AudioClassifier.swift */,
+				E70549522C56D3CD007595A4 /* SpeechRecognizer.swift */,
+				E70549542C56D3E2007595A4 /* AudioSessionManager.swift */,
+				E70549562C56D3F3007595A4 /* AudioClassificationManager.swift */,
 			);
 			path = SoundWeaverHUD;
 			sourceTree = "<group>";
@@ -81,6 +129,29 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		E70549482C56D358007595A4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E70549422C56D326007595A4 /* AwarenessView.swift */,
+				E705495A2C56D9DE007595A4 /* TranscriptView.swift */,
+				E70549582C56D9AE007595A4 /* SoundClassificationView.swift */,
+				E70549442C56D32D007595A4 /* ActionView.swift */,
+				E70549462C56D335007595A4 /* SocialView.swift */,
+				E79D9CEB2C57D2BE0098BE30 /* AwarenessDirectionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E70549492C56D36C007595A4 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E705494A2C56D379007595A4 /* ClassificationResultsObject.swift */,
+				E705494E2C56D398007595A4 /* DetectionState.swift */,
+				E705494C2C56D38B007595A4 /* SoundIdentifier.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -99,6 +170,11 @@
 			name = SoundWeaverHUD;
 			packageProductDependencies = (
 				E705492F2C56D168007595A4 /* RealityKitContent */,
+				E7D6D4722C57D26C00A2D747 /* FirebaseAnalytics */,
+				E7D6D4742C57D26C00A2D747 /* FirebaseAnalyticsOnDeviceConversion */,
+				E7D6D4762C57D26C00A2D747 /* FirebaseAnalyticsSwift */,
+				E7D6D4782C57D26C00A2D747 /* FirebaseDatabase */,
+				E7D6D47A2C57D26C00A2D747 /* FirebaseDatabaseSwift */,
 			);
 			productName = SoundWeaverHUD;
 			productReference = E705492A2C56D168007595A4 /* SoundWeaverHUD.app */;
@@ -128,6 +204,9 @@
 				Base,
 			);
 			mainGroup = E70549212C56D168007595A4;
+			packageReferences = (
+				E7D6D4712C57D26C00A2D747 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = E705492B2C56D168007595A4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -144,6 +223,7 @@
 			files = (
 				E70549392C56D16A007595A4 /* Preview Assets.xcassets in Resources */,
 				E70549362C56D16A007595A4 /* Assets.xcassets in Resources */,
+				E705495D2C57CDAF007595A4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,8 +234,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E70549592C56D9AE007595A4 /* SoundClassificationView.swift in Sources */,
+				E70549452C56D32D007595A4 /* ActionView.swift in Sources */,
+				E70549552C56D3E2007595A4 /* AudioSessionManager.swift in Sources */,
+				E70549412C56D1F8007595A4 /* HUDView.swift in Sources */,
+				E70549532C56D3CD007595A4 /* SpeechRecognizer.swift in Sources */,
+				E705494F2C56D398007595A4 /* DetectionState.swift in Sources */,
+				E70549572C56D3F3007595A4 /* AudioClassificationManager.swift in Sources */,
 				E70549342C56D168007595A4 /* ContentView.swift in Sources */,
+				E70549432C56D326007595A4 /* AwarenessView.swift in Sources */,
+				E705494D2C56D38B007595A4 /* SoundIdentifier.swift in Sources */,
+				E705495B2C56D9DE007595A4 /* TranscriptView.swift in Sources */,
+				E705494B2C56D379007595A4 /* ClassificationResultsObject.swift in Sources */,
+				E79D9CEC2C57D2BE0098BE30 /* AwarenessDirectionView.swift in Sources */,
+				E70549512C56D3B8007595A4 /* AudioClassifier.swift in Sources */,
 				E70549322C56D168007595A4 /* SoundWeaverHUDApp.swift in Sources */,
+				E70549472C56D335007595A4 /* SocialView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,9 +383,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SoundWeaverHUD/Preview Content\"";
+				DEVELOPMENT_TEAM = ST54V5XQY4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app will require microphone usage.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "This app will require speech recognition service.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,9 +411,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SoundWeaverHUD/Preview Content\"";
+				DEVELOPMENT_TEAM = ST54V5XQY4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app will require microphone usage.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "This app will require speech recognition service.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -354,10 +454,46 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		E7D6D4712C57D26C00A2D747 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.29.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		E705492F2C56D168007595A4 /* RealityKitContent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RealityKitContent;
+		};
+		E7D6D4722C57D26C00A2D747 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E7D6D4712C57D26C00A2D747 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		E7D6D4742C57D26C00A2D747 /* FirebaseAnalyticsOnDeviceConversion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E7D6D4712C57D26C00A2D747 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsOnDeviceConversion;
+		};
+		E7D6D4762C57D26C00A2D747 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E7D6D4712C57D26C00A2D747 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		E7D6D4782C57D26C00A2D747 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E7D6D4712C57D26C00A2D747 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		E7D6D47A2C57D26C00A2D747 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E7D6D4712C57D26C00A2D747 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
