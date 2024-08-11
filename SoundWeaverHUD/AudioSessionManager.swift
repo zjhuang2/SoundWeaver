@@ -17,8 +17,14 @@ class AudioSessionManager {
 
     private func configureAudioSession() {
         do {
-            try audioSession.setCategory(.record, mode: .default)
+            try audioSession.setCategory(.record, mode: .measurement, options: [.allowBluetooth])
             try audioSession.setActive(true)
+//            if #available(visionOS 1.0, *) {
+//                let availableDataSources = audioSession.availableInputs?.first?.dataSources
+//                if let omniDirectionalSource = availableDataSources?.first(where: {$0.preferredPolarPattern == .omnidirectional}) {
+//                    try audioSession.setInputDataSource(omniDirectionalSource)
+//                }
+//            }
         } catch {
             print("Failed to set up audio session: \(error)")
         }

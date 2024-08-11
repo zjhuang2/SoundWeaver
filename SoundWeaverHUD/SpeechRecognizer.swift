@@ -47,6 +47,7 @@ import Speech
             
             // The AudioSession is already active, creating input node.
             let inputNode = audioEngine.inputNode
+//            try inputNode.setVoiceProcessingEnabled(false)
             
             // Create and configure the speech recognition request
             recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
@@ -65,9 +66,12 @@ import Speech
                 
                 if let result = result {
                     // Update the recognizedText
-                    completion(result.bestTranscription.formattedString)
+                    let recognizedText = result.bestTranscription.formattedString
+                    let lines = recognizedText.split(separator: "\n")
+                    let lastTwoLines = lines.suffix(2).joined(separator: "\n")
+                    completion(lastTwoLines)
                 } else if let error = error {
-                    completion("Recognition error: \(error.localizedDescription)")
+                    completion("Recognition stopped: \(error.localizedDescription)")
                 }
                 
                 if error != nil || result?.isFinal == true {

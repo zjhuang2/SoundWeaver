@@ -9,7 +9,7 @@ import SwiftUI
 import FirebaseDatabase
 import Firebase
 
-struct AwarenessDirectionView: View {
+struct DirectionView: View {
     @State private var directionLabel: String = "NA"
     
     var databaseRef: DatabaseReference!
@@ -18,41 +18,44 @@ struct AwarenessDirectionView: View {
         VStack {
             // Start Grid
             // Row 1
-            VStack {
-                HStack {
-                    if directionLabel == "Front-left" {Image(systemName: "arrow.up.left")}
+            Spacer()
+            HStack {
+                VStack {
+                    if directionLabel == "Front-left" {Image(systemName: "arrow.up.left").resizable().frame(width: 100, height: 100)}
                 }
                 Spacer()
-                HStack {
-                    if directionLabel == "Front" {Image(systemName: "arrow.up")}
+                VStack {
+                    if directionLabel == "Front" {Image(systemName: "arrow.up").resizable().frame(width: 100, height: 100)}
                 }
                 Spacer()
-                HStack {
-                    if directionLabel == "Front-right" {Image(systemName: "arrow.up.right")}
+                VStack {
+                    if directionLabel == "Front-right" {Image(systemName: "arrow.up.right").resizable().frame(width: 100, height: 100)}
                 }
             }
             // Row 2
-            VStack {
-                HStack {
-                    if directionLabel == "Left" {Image(systemName: "arrow.left")}
+            HStack {
+                VStack {
+                    if directionLabel == "Left" {Image(systemName: "arrow.left").resizable().frame(width: 100, height: 100)}
                 }
                 Spacer()
-                HStack {
-                    if directionLabel == "Right" {Image(systemName: "arrow.right")}
+                VStack {}
+                Spacer()
+                VStack {
+                    if directionLabel == "Right" {Image(systemName: "arrow.right").resizable().frame(width: 100, height: 100)}
                 }
             }
             // Row 3
-            VStack {
-                HStack {
-                    if directionLabel == "Back-left" {Image(systemName: "arrow.down.left")}
+            HStack {
+                VStack {
+                    if directionLabel == "Back-left" {Image(systemName: "arrow.down.left").resizable().frame(width: 100, height: 100)}
                 }
                 Spacer()
-                HStack {
-                    if directionLabel == "Back" {Image(systemName: "arrow.down")}
+                VStack {
+                    if directionLabel == "Back" {Image(systemName: "arrow.down").resizable().frame(width: 100, height: 100)}
                 }
                 Spacer()
-                HStack {
-                    if directionLabel == "Back-right" {Image(systemName: "arrow.down.right")}
+                VStack {
+                    if directionLabel == "Back-right" {Image(systemName: "arrow.down.right").resizable().frame(width: 100, height: 100)}
                 }
             }
         }
@@ -92,5 +95,5 @@ struct AwarenessDirectionView: View {
 }
 
 //#Preview {
-//    AwarenessDirectionView()
+//    DirectionView()
 //}

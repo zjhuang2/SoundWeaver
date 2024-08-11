@@ -24,6 +24,18 @@ struct AwarenessView: View {
     var body: some View {
         VStack {
             HStack {
+                VStack {
+                    Text("Sound Level").font(.largeTitle)
+//                    ProgressView(value: normalize(soundLevel: SoundLevelMonitor.shared.soundLevel))
+//                        .frame(width: 400, height: 100)
+//                        .padding()
+                    Text("\(SoundLevelMonitor.shared.soundLevelCategory.rawValue)")
+                        .font(.title)
+                        .padding()
+                        .background(backgroundForCategory(SoundLevelMonitor.shared.soundLevelCategory))
+                        .foregroundColor(.white)
+                        .cornerRadius(16)
+                }
                 Spacer()
                 Button(action: {
                     // scene understanding
@@ -40,8 +52,27 @@ struct AwarenessView: View {
         }
     }
     
+    private func normalize(soundLevel: Float) -> Double {
+        let minDb: Float = -160
+        let maxDb: Float = 0
+        return Double((soundLevel - minDb) / (maxDb - minDb))
+    }
+    
     private func stopTranscribing() {
         SpeechRecognizer.shared.stopTranscribing()
+    }
+    
+    private func backgroundForCategory(_ category: SoundLevelMonitor.SoundCategory) -> Color {
+        switch category {
+        case .quiet:
+            return .green
+        case .ambient:
+            return .blue
+        case .loud:
+            return .orange
+        case .veryLoud:
+            return .red
+        }
     }
 }
 
