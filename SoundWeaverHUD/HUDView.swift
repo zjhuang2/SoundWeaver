@@ -61,12 +61,14 @@ struct HUDView: View {
                     if !isSensing {
                         // Start audio classification and speech recognition
                         classificationState.restartDetection(config: classificationConfig)
-                        startTranscribing()
+//                        startTranscribing()
+                        SoundLevelMonitor.shared.startMonitoring()
                         isSensing.toggle()
                     } else {
                         // stop audio classification and speech recognition
                         AudioClassifier.singleton.stopSoundClassification()
-                        stopTranscribing()
+//                        stopTranscribing()
+                        SoundLevelMonitor.shared.stopMonitoring()
                         isSensing.toggle()
                     }
                 }) {
@@ -86,7 +88,7 @@ struct HUDView: View {
                 } else if currentMode == "Action" {
                     ActionView()
                 } else if currentMode == "Social" {
-                    TranscriptView(transcriptText: transcriptText)
+                    TranscriptView()
                 }
             }
             

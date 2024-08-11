@@ -11,7 +11,7 @@ struct ActionView: View {
     var body: some View {
         VStack {
             Text("Direction").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-            AwarenessDirectionView()
+            DirectionView()
         }
     }
 }
