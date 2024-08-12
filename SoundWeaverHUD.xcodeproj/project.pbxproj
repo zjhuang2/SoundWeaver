@@ -26,6 +26,7 @@
 		E70549592C56D9AE007595A4 /* SoundClassificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70549582C56D9AE007595A4 /* SoundClassificationView.swift */; };
 		E705495B2C56D9DE007595A4 /* TranscriptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E705495A2C56D9DE007595A4 /* TranscriptView.swift */; };
 		E73298112C5C0B6C00CA5405 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E73298102C5C0B6C00CA5405 /* GoogleService-Info.plist */; };
+		E7543F5D2C69402A00EAAF6C /* VisualizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7543F5C2C69402A00EAAF6C /* VisualizerView.swift */; };
 		E776898C2C62CD550096F933 /* CustomSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776898B2C62CD550096F933 /* CustomSpeech.swift */; };
 		E7985D592C5BC6BE00AED2C0 /* SoundLevelMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7985D582C5BC6BE00AED2C0 /* SoundLevelMonitor.swift */; };
 		E79D9CEC2C57D2BE0098BE30 /* DirectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D9CEB2C57D2BE0098BE30 /* DirectionView.swift */; };
@@ -58,6 +59,7 @@
 		E70549582C56D9AE007595A4 /* SoundClassificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundClassificationView.swift; sourceTree = "<group>"; };
 		E705495A2C56D9DE007595A4 /* TranscriptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptView.swift; sourceTree = "<group>"; };
 		E73298102C5C0B6C00CA5405 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E7543F5C2C69402A00EAAF6C /* VisualizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerView.swift; sourceTree = "<group>"; };
 		E776898B2C62CD550096F933 /* CustomSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSpeech.swift; sourceTree = "<group>"; };
 		E7985D582C5BC6BE00AED2C0 /* SoundLevelMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundLevelMonitor.swift; sourceTree = "<group>"; };
 		E79D9CEB2C57D2BE0098BE30 /* DirectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionView.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				E70549422C56D326007595A4 /* AwarenessView.swift */,
+				E7543F5C2C69402A00EAAF6C /* VisualizerView.swift */,
 				E705495A2C56D9DE007595A4 /* TranscriptView.swift */,
 				E70549582C56D9AE007595A4 /* SoundClassificationView.swift */,
 				E70549442C56D32D007595A4 /* ActionView.swift */,
@@ -256,6 +259,7 @@
 				E70549532C56D3CD007595A4 /* SpeechRecognizer.swift in Sources */,
 				E705494F2C56D398007595A4 /* DetectionState.swift in Sources */,
 				E70549572C56D3F3007595A4 /* AudioClassificationManager.swift in Sources */,
+				E7543F5D2C69402A00EAAF6C /* VisualizerView.swift in Sources */,
 				E70549342C56D168007595A4 /* ContentView.swift in Sources */,
 				E70549432C56D326007595A4 /* AwarenessView.swift in Sources */,
 				E705494D2C56D38B007595A4 /* SoundIdentifier.swift in Sources */,

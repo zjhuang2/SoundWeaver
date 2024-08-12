@@ -44,7 +44,7 @@ struct SoundClassificationView: View {
     
     var body: some View {
         VStack {
-            Text("Detecting sounds").font(.title).padding()
+//            Text("Detecting sounds").font(.title).padding()
             SoundClassificationView.displaySoundLabelsGrid(classificationState.detectionStates)
         }
     }
