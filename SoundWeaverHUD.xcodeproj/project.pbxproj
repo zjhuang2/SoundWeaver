@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E703C6A62C72CC8200801F6C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E703C6A52C72CC8200801F6C /* DataManager.swift */; };
 		E70549302C56D168007595A4 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = E705492F2C56D168007595A4 /* RealityKitContent */; };
 		E70549322C56D168007595A4 /* SoundWeaverHUDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70549312C56D168007595A4 /* SoundWeaverHUDApp.swift */; };
 		E70549342C56D168007595A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70549332C56D168007595A4 /* ContentView.swift */; };
@@ -26,6 +27,7 @@
 		E70549592C56D9AE007595A4 /* SoundClassificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70549582C56D9AE007595A4 /* SoundClassificationView.swift */; };
 		E705495B2C56D9DE007595A4 /* TranscriptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E705495A2C56D9DE007595A4 /* TranscriptView.swift */; };
 		E73298112C5C0B6C00CA5405 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E73298102C5C0B6C00CA5405 /* GoogleService-Info.plist */; };
+		E73992A02C72D0B800470076 /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E739929F2C72D0B800470076 /* TaskItem.swift */; };
 		E7543F5D2C69402A00EAAF6C /* VisualizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7543F5C2C69402A00EAAF6C /* VisualizerView.swift */; };
 		E776898C2C62CD550096F933 /* CustomSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776898B2C62CD550096F933 /* CustomSpeech.swift */; };
 		E7985D592C5BC6BE00AED2C0 /* SoundLevelMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7985D582C5BC6BE00AED2C0 /* SoundLevelMonitor.swift */; };
@@ -38,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E703C6A52C72CC8200801F6C /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		E705492A2C56D168007595A4 /* SoundWeaverHUD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundWeaverHUD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E705492E2C56D168007595A4 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		E70549312C56D168007595A4 /* SoundWeaverHUDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWeaverHUDApp.swift; sourceTree = "<group>"; };
@@ -59,6 +62,7 @@
 		E70549582C56D9AE007595A4 /* SoundClassificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundClassificationView.swift; sourceTree = "<group>"; };
 		E705495A2C56D9DE007595A4 /* TranscriptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptView.swift; sourceTree = "<group>"; };
 		E73298102C5C0B6C00CA5405 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E739929F2C72D0B800470076 /* TaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
 		E7543F5C2C69402A00EAAF6C /* VisualizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerView.swift; sourceTree = "<group>"; };
 		E776898B2C62CD550096F933 /* CustomSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSpeech.swift; sourceTree = "<group>"; };
 		E7985D582C5BC6BE00AED2C0 /* SoundLevelMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundLevelMonitor.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 				E70549542C56D3E2007595A4 /* AudioSessionManager.swift */,
 				E70549562C56D3F3007595A4 /* AudioClassificationManager.swift */,
 				E7985D582C5BC6BE00AED2C0 /* SoundLevelMonitor.swift */,
+				E703C6A52C72CC8200801F6C /* DataManager.swift */,
 			);
 			path = SoundWeaverHUD;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 				E705494A2C56D379007595A4 /* ClassificationResultsObject.swift */,
 				E705494E2C56D398007595A4 /* DetectionState.swift */,
 				E705494C2C56D38B007595A4 /* SoundIdentifier.swift */,
+				E739929F2C72D0B800470076 /* TaskItem.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -252,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7985D592C5BC6BE00AED2C0 /* SoundLevelMonitor.swift in Sources */,
+				E703C6A62C72CC8200801F6C /* DataManager.swift in Sources */,
 				E70549592C56D9AE007595A4 /* SoundClassificationView.swift in Sources */,
 				E70549452C56D32D007595A4 /* ActionView.swift in Sources */,
 				E70549552C56D3E2007595A4 /* AudioSessionManager.swift in Sources */,
@@ -263,6 +270,7 @@
 				E70549342C56D168007595A4 /* ContentView.swift in Sources */,
 				E70549432C56D326007595A4 /* AwarenessView.swift in Sources */,
 				E705494D2C56D38B007595A4 /* SoundIdentifier.swift in Sources */,
+				E73992A02C72D0B800470076 /* TaskItem.swift in Sources */,
 				E705495B2C56D9DE007595A4 /* TranscriptView.swift in Sources */,
 				E705494B2C56D379007595A4 /* ClassificationResultsObject.swift in Sources */,
 				E79D9CEC2C57D2BE0098BE30 /* DirectionView.swift in Sources */,

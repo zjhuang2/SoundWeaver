@@ -86,19 +86,34 @@ import Combine
         
         DispatchQueue.main.async {
             
-            // watch out for anomalies
-            if let lastAmplitude = self.amplitudes.last, abs(normalizedAmplitude - lastAmplitude) > 0.08 {
-                self.suddenSpikeDetected = true
-                // Reset suddenSpikeDetected to false after 5 seconds
-                DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-                    self.suddenSpikeDetected = false
-                }
-            }
-            
             self.amplitudes.append(normalizedAmplitude)
+            
             if self.amplitudes.count > 100 {
                 self.amplitudes.removeFirst()
             }
+            
+            // watch out for anomalies
+            if self.amplitudes.count >= 6 {
+                let lastTenAverage = self.amplitudes.suffix(3).reduce(0, +) / 3.0
+                let previousTenAverage = self.amplitudes.prefix(self.amplitudes.count - 3).suffix(3).reduce(0, +) / 3.0
+                
+                if abs(lastTenAverage - previousTenAverage) > 0.05 {
+                    self.suddenSpikeDetected = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                        self.suddenSpikeDetected = false
+                    }
+                }
+            }
+            
+//            if let lastAmplitude = self.amplitudes.last, (normalizedAmplitude - lastAmplitude) > 0.02 {
+//                self.suddenSpikeDetected = true
+//                // Reset suddenSpikeDetected to false after 5 seconds
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+//                    self.suddenSpikeDetected = false
+//                }
+//            }
+            
+
         }
         
 //        amplitudes.append(normalizedAmplitude)

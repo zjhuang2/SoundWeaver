@@ -11,33 +11,32 @@ import Firebase
 import FirebaseDatabase
 
 struct TranscriptView: View {
-    @State var transcriptText: String = ""
     
-    private var ref: DatabaseReference = Database.database().reference().child("transcript").child("text")
-    
-    func fetchTranscript() {
-        ref.observe(.value) { snapshot in
-            if let value = snapshot.value as? String {
-                self.transcriptText = value
-            } else {
-                self.transcriptText = "No transcript available"
-            }
-        }
-    }
+//    private var ref: DatabaseReference = Database.database().reference().child("transcript").child("text")
+//    
+//    func fetchTranscript() {
+//        ref.observe(.value) { snapshot in
+//            if let value = snapshot.value as? String {
+//                self.transcriptText = value
+//            } else {
+//                self.transcriptText = "No transcript available"
+//            }
+//        }
+//    }
     
     var body: some View {
         VStack {
-            Spacer()
+//            Spacer()
             VStack {
-                Text(transcriptText)
+                Text(DataManager.shared.currentTranscriptText)
                     .padding()
                     .multilineTextAlignment(.center)
                     .frame(height: 200)
             }
         }
-        .onAppear {
-            fetchTranscript()
-        }
+//        .onAppear {
+//            fetchTranscript()
+//        }
     }
 }
 //#Preview {
