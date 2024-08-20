@@ -11,21 +11,24 @@ import SoundAnalysis
 
 struct SoundClassificationView: View {
     
-    /// The runtime state that contains information about the strength of the detected sounds.
-    var classificationState: AudioClassificationState
+    @State var detectionStates = DataManager.shared.detectionStates
     
-    /// The configuration that dictates the aspect of sound classification in Awareness Mode
-    @State var classificationConfig: AudioClassificationConfiguration
+//    /// The runtime state that contains information about the strength of the detected sounds.
+//    var classificationState: AudioClassificationState
+//    
+//    /// The configuration that dictates the aspect of sound classification in Awareness Mode
+//    @State var classificationConfig: AudioClassificationConfiguration
     
-    
-    // Display a grid of sound labels.
-    static func displaySoundLabelsGrid(_ detections: [(SoundIdentifier, DetectionState)]) -> some View {
+    /// Displays a grid of sound labels for detected sounds in Awareness Mode
+    ///
+    /// - Parameters:
+    ///     - detections: An array of detected sounds with corresponding properties, labelName and confidence.
+    static func displaySoundLabelsGrid(_ detections: [[String: Any]]) -> some View {
         return HStack {
-            ForEach(detections, id: \.0.labelName) {
-                if $1.isDetected == true {
-                    generateSoundLabel(label: $0.displayName)
+            ForEach(0 ..< detections.count, id: \.self) { index in
+                if let soundLabel = detections[index]["labelName"] as? String {
+                    generateSoundLabel(label: soundLabel)
                 }
-
             }
         }
     }
@@ -44,8 +47,9 @@ struct SoundClassificationView: View {
     
     var body: some View {
         VStack {
-//            Text("Detecting sounds").font(.title).padding()
-            SoundClassificationView.displaySoundLabelsGrid(classificationState.detectionStates)
+            Text("\(detectionStates)")
+//            Text("Sounds Recognized").font(.title).padding()
+            SoundClassificationView.displaySoundLabelsGrid(detectionStates)
         }
     }
 }

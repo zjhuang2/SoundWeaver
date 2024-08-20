@@ -54,7 +54,6 @@ import Combine
                                        presenceMeasurementsToStartDetection: 3,
                                        absenceMeasurementsToEndDetection: 10))
             }
-        
         soundDetectionIsRunning = true
         classificationConfig = config
         AudioClassifier.singleton.startSoundClassification(subject: classificationSubject,

@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseDatabase
 
 struct VisualizerView: View {
     
     var body: some View {
         VStack {
-            WaveformView(amplitudes: SoundLevelMonitor.shared.amplitudes)
+            WaveformView(amplitudes: DataManager.shared.currentSoundLevel)
                 .stroke(Color.white, lineWidth: 2)
                 .frame(height: 200)
                 .padding()
@@ -20,6 +22,7 @@ struct VisualizerView: View {
 }
 
 struct WaveformView: Shape {
+    
     var amplitudes: [CGFloat]
 
     func path(in rect: CGRect) -> Path {
