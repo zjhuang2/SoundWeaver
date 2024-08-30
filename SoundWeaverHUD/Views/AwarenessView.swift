@@ -14,67 +14,91 @@ struct AwarenessView: View {
     // Establish Firebase connection
     var databaseRef: DatabaseReference!
     
-//    var classificationState: AudioClassificationState
-//    @Binding var classificationConfig: AudioClassificationConfiguration
-    
-    //    @State var suddenSpikeDetected = SoundLevelMonitor.shared.suddenSpikeDetected
     @State var showSoundID: Bool = false
     @State var showPromptForSoundID: Bool = false
     
     var isSensing: Bool
     
-//    @State var transcriptText: String = ""
+    @State var isWaitingResponse = false
+    @State var APIResponse: String? = nil
+    
     
     var body: some View {
         VStack {
-            Text("\(DataManager.shared.detectionStates)")
+            //            Text("\(DataManager.shared.detectionStates)")
             HStack {
-                Spacer(); Spacer(); Spacer()
+                Spacer()
                 Button(action: {
-                    // TODO: Connect to Scene Understanding API
+                    startASUTask()
+                    observeAPIResponse()
                 }) {
-                    Image(systemName: "mountain.2.fill")
+                    if isWaitingResponse {
+                        ProgressView("Sensing Environment...")
+                            .padding()
+                    } else {
+                        Image(systemName: "mountain.2.fill")
+                    }
+                }
+            }
+            VStack {
+                if let response = APIResponse {
+                    if response != "No response yet" {
+                        Text(response)
+                    }
                 }
             }
             
             Spacer()
             
             VStack {
-                VisualizerView()
-            
-                if DataManager.shared.spikeDetected {
+                HStack {
+                    VisualizerView()
+                        .padding()
+                    
+                    Button(action: {
+                        showSoundID.toggle()
+//                        autoHideSoundID()
+                    }) {
+                        Image(systemName: showSoundID ? "clear.fill" : "text.magnifyingglass")
+                    }
+                    .glassBackgroundEffect()
+                }
+                
+                if !showSoundID && DataManager.shared.spikeDetected {
                     Button(action: {
                         showSoundID = true
-                        autoHideSoundID()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+                            showSoundID = false
+                        }
                     }) {
-                        Text(showSoundID ? "Recognized Sounds" : "Sound ID?")
+                        Text("Show Possible Sound IDs?").font(.title)
                     }
-                    .buttonStyle(.plain)
+                    .glassBackgroundEffect()
                 }
                 
                 if showSoundID {
                     SoundClassificationView()
                 }
                 
-//                Text("\(SoundLevelMonitor.shared.suddenSpikeDetected)")
-//                if SoundLevelMonitor.shared.suddenSpikeDetected {
-//                    promptSoundID()
-//                    Button(action: {
-//                        showSoundID = true
-//                    }) {
-//                        Text(showSoundID ? "Sounds like" : "Show Sound IDs?")
-//                    }
-//                    .buttonStyle(.plain)
-//                    .onAppear {
-//                        autoHideSoundID()
-//                    }
-////                    .glassBackgroundEffect()
-//                }
-//                
-//                if showSoundID {
-//                    SoundClassificationView(classificationState: classificationState,
-//                                            classificationConfig: classificationConfig)
-//                }
+                //                Text("\(SoundLevelMonitor.shared.suddenSpikeDetected)")
+                //                if SoundLevelMonitor.shared.suddenSpikeDetected {
+                //                    promptSoundID()
+                //                    Button(action: {
+                //                        showSoundID = true
+                //                    }) {
+                //                        Text(showSoundID ? "Sounds like" : "Show Sound IDs?")
+                //                    }
+                //                    .buttonStyle(.plain)
+                //                    .onAppear {
+                //                        autoHideSoundID()
+                //                    }
+                ////                    .glassBackgroundEffect()
+                //                }
+                //
+                //                if showSoundID {
+                //                    SoundClassificationView(classificationState: classificationState,
+                //                                            classificationConfig: classificationConfig)
+                //                }
             }
         }
     }
@@ -85,6 +109,43 @@ struct AwarenessView: View {
         }
     }
     
+    private func startASUTask() {
+        let databaseRef = Database.database().reference()
+        databaseRef.child("ASUStartRecording").setValue(true)
+        isWaitingResponse = true
+    }
+    
+    private func observeAPIResponse() {
+        let databaseRef = Database.database().reference()
+        databaseRef.child("ASUResponse").observe(.value) { snapshot in
+            if let response = snapshot.value as? String, response != "NA" {
+
+                
+                DispatchQueue.main.async {
+                    // Convert JSON Data
+                    if let jsonData = response.data(using: .utf8) {
+                        do {
+                            let responseObjectJSON = try JSONDecoder().decode(APIResponseObject.self, from: jsonData)
+                            let result = responseObjectJSON.result.capitalized
+                            APIResponse = result
+                            isWaitingResponse = false
+                        } catch {
+                            print("Error parsing JSON Code.")
+                        }
+                    }
+                
+//                    APIResponse = response
+//                    isWaitingResponse = false
+                }
+            }
+        }
+    }
+}
+
+struct APIResponseObject: Codable {
+    var result: String
+}
+
 //    private func normalize(soundLevel: Float) -> Double {
 //        let minDb: Float = -160
 //        let maxDb: Float = 0
@@ -107,7 +168,7 @@ struct AwarenessView: View {
 //            return .red
 //        }
 //    }
-}
+//}
 
 //#Preview {
 //    AwarenessView()

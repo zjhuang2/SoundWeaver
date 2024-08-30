@@ -33,11 +33,20 @@ import FirebaseDatabase
     
     // Current sound level
     var currentSoundLevel: [CGFloat] = []
+    var averageSoundLevel: CGFloat = 0.0
     
     // If there is any spike detected
     var spikeDetected: Bool = false
     
-    var currentTranscriptText: String = ""
+    var currentTranscript: String = ""
+    var currentTranscriptTextLine1: String = ""
+    var currentTranscriptTextLine2: String = ""
+    
+    private var clearTimer: Timer?
+    
+    var emergencySoundDetected: Bool = false
+    
+//    var currentTranscriptText: String = ""
     
     private init() {
         observeActionModeModeSounds()
@@ -46,9 +55,55 @@ import FirebaseDatabase
         observeDirection()
         observeSoundLevel()
         observeSpike()
-        observeTranscript()
+        observeSegmentedCaptions()
+        observeEmergencyDetection()
+        observeCurrentTranscript()
+        observeAvgSoundLevel()
     }
     
+    func observeCurrentTranscript() {
+        realtimeDB.child("currentTranscript").observe(.value, with: { snapshot in
+            if let value = snapshot.value as? String {
+                self.currentTranscript = value
+            }
+        })
+    }
+    
+    func observeEmergencyDetection() {
+        realtimeDB.child("emergencyDetected").observe(.value, with: { snapshot in
+            if let value = snapshot.value as? Bool {
+                self.emergencySoundDetected = value
+            }
+        })
+    }
+    
+    func observeSegmentedCaptions() {
+        realtimeDB.child("captionLines").observe(.value, with: { snapshot in
+            guard let segmentedCaptions = snapshot.value as? [String] else {
+                print("Invalid data structure.")
+                return
+            }
+            
+            if segmentedCaptions.count < 2 {
+                self.currentTranscriptTextLine2 = segmentedCaptions[0]
+            } else {
+                self.currentTranscriptTextLine1 = segmentedCaptions[0]
+                self.currentTranscriptTextLine2 = segmentedCaptions[1]
+            }
+            
+            // reset the timer whenever new captions are received, otherwise clear the caption
+            self.resetClearTimer()
+        })
+    }
+    
+    private func resetClearTimer() {
+        clearTimer?.invalidate() // Invalidate the previous timer
+        clearTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { [weak self] _ in
+            // Clear the captions after 5 seconds of inactivity
+            self?.currentTranscriptTextLine1 = ""
+            self?.currentTranscriptTextLine2 = ""
+        }
+    }
 
     func observeActionModeModeSounds() {
         realtimeDB.child("currentActionModeSounds").observe(.value, with: { snapshot in
@@ -84,7 +139,8 @@ import FirebaseDatabase
     func observeDetectionStates() {
         realtimeDB.child("detectionStates").observe(.value, with: { snapshot in
             guard let detectedSoundsArray = snapshot.value as? [[String: Any]] else {
-                print("Invalid data structure")
+                self.detectionStates = []
+                print("No sound recognized.")
                 return
             }
             self.detectionStates = detectedSoundsArray
@@ -108,19 +164,27 @@ import FirebaseDatabase
     }
     
     func observeSpike() {
-        realtimeDB.child("spikeDetected").child("value").observe(.value, with: { snapshot in
+        realtimeDB.child("spikeDetected").observe(.value, with: { snapshot in
             if let value = snapshot.value as? Bool {
                 self.spikeDetected = value
             }
         })
     }
     
-    func observeTranscript() {
-        realtimeDB.child("transcript").child("text").observe(.value, with: { snapshot in
-            if let value = snapshot.value as? String {
-                self.currentTranscriptText = value
+    func observeAvgSoundLevel() {
+        realtimeDB.child("AverageSoundLevel").observe(.value, with: { snapshot in
+            if let value = snapshot.value as? CGFloat {
+                self.averageSoundLevel = value
             }
         })
     }
+    
+//    func observeTranscript() {
+//        realtimeDB.child("transcript").child("text").observe(.value, with: { snapshot in
+//            if let value = snapshot.value as? String {
+//                self.currentTranscriptText = value
+//            }
+//        })
+//    }
     
 }

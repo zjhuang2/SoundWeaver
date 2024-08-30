@@ -20,19 +20,18 @@ struct ActionView: View {
     
     var body: some View {
         VStack {
-            Text("Direction").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             DirectionView()
         }
         
         // Pinned Sound Labels
         VStack {
-            Text("\(currentPinnedSoundItems)")
+//            Text("\(currentPinnedSoundItems)")
             ActionView.displayPinnedSoundLabelsGrid(pinnedSoundItems: currentPinnedSoundItems)
         }
         
         // Other Labels
         VStack {
-            Text("\(currentGeneralSoundItems)")
+//            Text("\(currentGeneralSoundItems)")
             ActionView.displayGeneralSoundLabelsGrid(generalSoundItems: currentGeneralSoundItems)
         }
     }
@@ -52,17 +51,35 @@ struct ActionView: View {
     /// Generate individual sound label.
     static func generatePinnedSoundLabel(labelName: String, activeState: Bool) -> some View {
         return VStack {
-            Button {
-                // No Actions
-            } label: {
+            HStack {
+                Image(systemName: "pin.fill")
+                    .padding(.leading)
                 Text("\(labelName)")
-                    .font(.title3)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .multilineTextAlignment(.center)
-                    .padding()
+                        .font(.title3)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .multilineTextAlignment(.center)
+                        .padding(.trailing)
+                        .padding(.vertical)
+
             }
+            .background(activeState == true ? Color.green.opacity(0.6) : Color.gray)
             .glassBackgroundEffect()
-            .tint(activeState == true ? Color.green : Color.gray)
+            .padding()
+            
+//            Button {
+//                // No Actions
+//            } label: {
+//                HStack {
+//                    Image(systemName: "pin.fill")
+//                    Text("\(labelName)")
+//                        .font(.title3)
+//                        .fixedSize(horizontal: false, vertical: true)
+//                        .multilineTextAlignment(.center)
+//                        .padding()
+//                }
+//            }
+//            .glassBackgroundEffect()
+//            .tint(activeState == true ? Color.green : Color.gray)
         }
     }
     
@@ -87,7 +104,7 @@ struct ActionView: View {
                 .fixedSize(horizontal: false, vertical: true)
                 .multilineTextAlignment(.center)
                 .padding()
-                .frame(height: 100)
+                .background(Color.green.opacity(0.6))
                 .glassBackgroundEffect()
         }
     }

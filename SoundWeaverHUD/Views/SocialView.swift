@@ -10,6 +10,7 @@ import SwiftUI
 struct SocialView: View {
     var body: some View {
         Spacer()
+        Spacer()
         TranscriptView()
     }
 }

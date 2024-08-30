@@ -32,6 +32,8 @@ struct DirectionView: View {
                     if directionLabel == "Front-right" {Image(systemName: "arrow.up.right").resizable().frame(width: 100, height: 100)}
                 }
             }
+            
+            Spacer()
             // Row 2
             HStack {
                 VStack {
@@ -44,6 +46,7 @@ struct DirectionView: View {
                     if directionLabel == "Right" {Image(systemName: "arrow.right").resizable().frame(width: 100, height: 100)}
                 }
             }
+            Spacer()
             // Row 3
             HStack {
                 VStack {

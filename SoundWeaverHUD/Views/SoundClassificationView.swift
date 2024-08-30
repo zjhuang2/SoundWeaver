@@ -36,7 +36,8 @@ struct SoundClassificationView: View {
     /// Generate individual sound label.
     static func generateSoundLabel(label: String) -> some View {
         return VStack {
-            Text("\(label)")
+            let displayName = displayNameForLabel(label)
+            Text("\(displayName)")
                 .fixedSize(horizontal: false, vertical: true)
                 .multilineTextAlignment(.center)
                 .padding()
@@ -45,11 +46,21 @@ struct SoundClassificationView: View {
         }
     }
     
+    static func displayNameForLabel(_ label: String) -> String {
+        let localizationTable = "SoundNames"
+        let unlocalized = label.replacingOccurrences(of: "_", with: " ").capitalized
+        return Bundle.main.localizedString(forKey: unlocalized, value: unlocalized, table: localizationTable)
+    }
+    
     var body: some View {
         VStack {
-            Text("\(detectionStates)")
+//            Text("\(detectionStates)")
 //            Text("Sounds Recognized").font(.title).padding()
-            SoundClassificationView.displaySoundLabelsGrid(detectionStates)
+            if DataManager.shared.detectionStates.isEmpty {
+                Text("No sound recognized 😊")
+            } else {
+                SoundClassificationView.displaySoundLabelsGrid(DataManager.shared.detectionStates)
+            }
         }
     }
 }

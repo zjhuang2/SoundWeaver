@@ -28,7 +28,7 @@ struct HUDView: View {
     
     var body: some View {
         VStack {
-            Spacer(); Spacer(); Spacer(); Spacer()
+            Spacer(); Spacer();
             HStack {
                 Button {
                     currentMode = "Awareness"
@@ -72,13 +72,27 @@ struct HUDView: View {
         
         VStack {
             if !isSensing {
-                Text("The SoundWeaver is not sensing any sound.").font(.largeTitle)
+                VStack {
+                    Text("The SoundWeaver is not sensing any sound.").font(.largeTitle)
+                }
+                Spacer()
             } else {
                 VStack {
-                    if DataManager.shared.currentTranscriptText.contains("Darren") {
+                    if DataManager.shared.currentTranscriptTextLine1.contains("Darren") || DataManager.shared.currentTranscriptTextLine2.contains("Darren")   {
                         Text("Someone may have called your name.").font(.title)
                     }
+                    if DataManager.shared.emergencySoundDetected {
+                        Image(systemName: "exclamationmark.triangle.fill")
+                            .resizable() // Make the image resizable
+                            .aspectRatio(contentMode: .fit) // Maintain aspect ratio
+                            .foregroundColor(.red) // Set color to red
+                            .frame(width: 80, height: 80) // Set size of the image
+                        Text("Emergency Sound Detected.")
+                            .font(.title)
+                            .foregroundStyle(.red)
+                    }
                 }
+                Spacer()
                 VStack {
                     switch currentMode {
                     case "Awareness":

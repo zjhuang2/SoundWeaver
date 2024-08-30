@@ -43,8 +43,8 @@ struct ContentView: View {
                 scene.transform.translation.x = 0
                 
                 if let swAttachment = attachments.entity(for: "swAttachment") {
-                    swAttachment.transform.translation.z = -1.6
-                    swAttachment.transform.translation.y = -0.1
+                    swAttachment.transform.translation.z = -1.0
+                    swAttachment.transform.translation.y = 0.0
                     anchor.addChild(swAttachment)
                 }
             }
